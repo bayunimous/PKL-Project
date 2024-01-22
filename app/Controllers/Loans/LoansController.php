@@ -392,6 +392,24 @@ class LoansController extends ResourceController
         return view('loans/report_loans', ['loans' => $loans]);
     }
 
+    public function statistics()
+    {
+        // Mengambil data peminjam dengan jumlah peminjaman terbanyak
+        $topBorrowers = $this->loanModel
+            ->select('members.*, COUNT(loans.id) as total_loans')
+            ->join('members', 'loans.member_id = members.id', 'LEFT')
+            ->groupBy('members.id')
+            ->orderBy('total_loans', 'DESC')
+            ->limit(5) // Ubah sesuai kebutuhan
+            ->findAll();
+
+        $data = [
+            'topBorrowers' => $topBorrowers,
+        ];
+
+        return view('loans/statistics', $data);
+    }
+
     // Tampilkan view cetak laporan
     // 
 

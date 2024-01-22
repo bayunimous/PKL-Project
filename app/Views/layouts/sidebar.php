@@ -27,6 +27,16 @@ $sidebarNavs =
       'link' => '/admin/fines',
       'icon' => 'ti ti-report-money'
     ],
+    [
+      'name' => 'Statistik Peminjaman',
+      'link' => '/admin/loans/statistics',
+      'icon' => 'ti ti-bookmark',
+    ],
+    [
+      'name' => 'Filter Rak Buku',
+      'link' => '#',
+      'icon' => 'ti ti-filter'
+    ],
     'Master',
     [
       'name' => 'Anggota',
