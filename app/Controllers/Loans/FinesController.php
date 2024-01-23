@@ -243,7 +243,7 @@ class FinesController extends ResourceController
         ];
 
         // Load view fines/report_fines.php
-        $html = view('finesreport/report_fines', $data);
+        $html = view('reports/report_fines', $data);
 
         // Load dompdf library
         $options = new Options();

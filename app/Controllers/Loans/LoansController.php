@@ -374,23 +374,24 @@ class LoansController extends ResourceController
         }
 
         if ($format === 'html') {
-            return view('loans/report_loans', ['loans' => $loans]);
+            return view('reports/report_loans', ['loans' => $loans]);
         } elseif ($format === 'pdf') {
-            $html = view('loans/report_loans', ['loans' => $loans]);
+            $pdfView = view('reports/report_loans', ['loans' => $loans]);
 
-            $options = new Options();
+            $options = new \Dompdf\Options();
             $options->set('isHtml5ParserEnabled', true);
             $options->set('isPhpEnabled', true);
-            $dompdf = new Dompdf($options);
-            $dompdf->loadHtml($html);
+            $dompdf = new \Dompdf\Dompdf($options);
+            $dompdf->loadHtml($pdfView);
             $dompdf->setPaper('A4', 'portrait');
             $dompdf->render();
 
             $dompdf->stream("Laporan_Peminjaman", array("Attachment" => false));
         }
 
-        return view('loans/report_loans', ['loans' => $loans]);
+        return view('reports/report_loans', ['loans' => $loans]);
     }
+
 
     public function statistics()
     {
@@ -407,7 +408,7 @@ class LoansController extends ResourceController
             'topBorrowers' => $topBorrowers,
         ];
 
-        return view('loans/statistics', $data);
+        return view('statisticsloan/statistics', $data);
     }
 
     public function printStatistics($format = 'pdf')
@@ -429,23 +430,24 @@ class LoansController extends ResourceController
         ];
 
         if ($format === 'html') {
-            return view('loans/print_statistics', $data); // Change view file if needed
+            return view('reports/print_statistics', $data); // Gantilah file view jika diperlukan
         } elseif ($format === 'pdf') {
-            $html = view('loans/print_statistics', $data); // Change view file if needed
+            $pdfView = view('reports/print_statistics', $data); // Gantilah file view jika diperlukan
 
-            $options = new Options();
+            $options = new \Dompdf\Options();
             $options->set('isHtml5ParserEnabled', true);
             $options->set('isPhpEnabled', true);
-            $dompdf = new Dompdf($options);
-            $dompdf->loadHtml($html);
+            $dompdf = new \Dompdf\Dompdf($options);
+            $dompdf->loadHtml($pdfView);
             $dompdf->setPaper('A4', 'portrait');
             $dompdf->render();
 
             $dompdf->stream("Laporan_Peminjaman", array("Attachment" => false));
         }
 
-        return view('loans/print_statistics', [$data]);
+        return view('reports/print_statistics', $data);
     }
+
     public function bookCategoryStatistics()
     {
         $statistics = $this->loanModel
@@ -459,7 +461,7 @@ class LoansController extends ResourceController
             'statistics' => $statistics,
         ];
 
-        return view('loans/book_category', $data);
+        return view('filtersrack/book_category', $data);
     }
 
     public function printBookCategoryStatistics()
@@ -478,7 +480,7 @@ class LoansController extends ResourceController
         ];
 
         // Load the PDF view
-        $pdf = view('loans/print_book_category', $data);
+        $pdf = view('reports/print_book_category', $data);
 
         // Set up the PDF options
         $options = new \Dompdf\Options();

@@ -41,16 +41,16 @@ $routes->group('admin', ['filter' => 'session'], static function (RouteCollectio
     $routes->get('dashboard', 'Dashboard\DashboardController::dashboard');
 
     ##sidebar print routes
-    $routes->get('loans/report_loans', 'Loans\LoansController::reportLoans');
-    $routes->get('loans/statistics', 'Loans\LoansController::statistics');
-    $routes->get('loans/print_statistics', 'Loans\LoansController::printStatistics');
-    $routes->get('loans/print_book_category', 'Loans\LoansController::printBookCategoryStatistics');
+    $routes->get('reports/report_loans', 'Loans\LoansController::reportLoans');
+    $routes->get('statisticsloan/statistics', 'Loans\LoansController::statistics');
+    $routes->get('reports/print_statistics', 'Loans\LoansController::printStatistics');
+    $routes->get('reports/print_book_category', 'Loans\LoansController::printBookCategoryStatistics');
 
 
-    $routes->get('loans/book_category', 'Loans\LoansController::bookCategoryStatistics');
+    $routes->get('filtersrack/book_category', 'Loans\LoansController::bookCategoryStatistics');
 
-    $routes->get('returns/report_returns', 'Loans\ReturnsController::reportReturns');
-    $routes->get('finesreport/report_fines', 'Loans\FinesController::reportFines');
+    $routes->get('reports/report_returns', 'Loans\ReturnsController::reportReturns');
+    $routes->get('reports/report_fines', 'Loans\FinesController::reportFines');
 
 
     $routes->resource('members', ['controller' => 'Members\MembersController']);

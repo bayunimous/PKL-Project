@@ -348,7 +348,7 @@ class ReturnsController extends ResourceController
             'loans' => $loans,
         ];
 
-        $html = view('returns/report_returns', $data);
+        $html = view('reports/report_returns', $data);
 
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);

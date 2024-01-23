@@ -49,42 +49,42 @@ $sidebarNavs = [
   ],
   [
     'name' => 'Filter Kategori',
-    'link' => '/admin/loans/book_category',
+    'link' => '/admin/filtersrack/book_category',
     'icon' => 'ti ti-filter'
   ],
   [
     'name' => 'Statistik Peminjaman',
-    'link' => '/admin/loans/statistics',
+    'link' => '/admin/statisticsloan/statistics',
     'icon' => 'ti ti-bookmark',
   ],
   'Cetak Laporan',
   [
     'name' => 'Cetak Peminjaman',
-    'link' => '/admin/loans/report_loans',
+    'link' => '/admin/reports/report_loans',
     'icon' => 'ti ti-arrows-exchange',
     'target' => '_blank'
   ],
   [
     'name' => 'Cetak Statistik Peminjaman',
-    'link' => '/admin/loans/print_statistics',
+    'link' => '/admin/reports/print_statistics',
     'icon' => 'ti ti-report-money',
     'target' => '_blank'
   ],
   [
     'name' => 'Cetak Pengembalian',
-    'link' => '/admin/returns/report_returns',
+    'link' => '/admin/reports/report_returns',
     'icon' => 'ti ti-check',
     'target' => '_blank'
   ],
   [
     'name' => 'Cetak Denda',
-    'link' => '/admin/finesreport/report_fines',
+    'link' => '/admin/reports/report_fines',
     'icon' => 'ti ti-report-money',
     'target' => '_blank'
   ],
   [
     'name' => 'Cetak Filter Kategori',
-    'link' => '/admin/loans/print_book_category',
+    'link' => '/admin/reports/print_book_category',
     'icon' => 'ti ti-report-money',
     'target' => '_blank'
   ],
@@ -114,7 +114,7 @@ if (auth()->user()->inGroup('superadmin') ?? false) {
     <div class="brand-logo d-flex align-items-center justify-content-between">
       <div class="pt-4 mx-auto">
         <a href="<?= base_url(); ?>">
-          <h2>Buku<span class="text-primary">Hub</span></h2>
+          <h2>E-<span class="text-primary">PERPUSJAR</span></h2>
         </a>
       </div>
       <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
