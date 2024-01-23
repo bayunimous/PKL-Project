@@ -78,7 +78,7 @@ $sidebarNavs = [
   ],
   [
     'name' => 'Cetak Denda',
-    'link' => '/admin/fines/report_fines',
+    'link' => '/admin/finesreport/report_fines',
     'icon' => 'ti ti-report-money',
     'target' => '_blank'
   ],

@@ -50,7 +50,7 @@ $routes->group('admin', ['filter' => 'session'], static function (RouteCollectio
     $routes->get('loans/book_category', 'Loans\LoansController::bookCategoryStatistics');
 
     $routes->get('returns/report_returns', 'Loans\ReturnsController::reportReturns');
-    $routes->get('fines/report_fines', 'Loans\FinesController::reportFines');
+    $routes->get('finesreport/report_fines', 'Loans\FinesController::reportFines');
 
 
     $routes->resource('members', ['controller' => 'Members\MembersController']);
