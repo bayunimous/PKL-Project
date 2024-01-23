@@ -3,81 +3,92 @@
 /**
  * List of sidebar navigations
  */
-$sidebarNavs =
+$sidebarNavs = [
+  'Home',
   [
-    'Home',
-    [
-      'name' => 'Dashboard',
-      'link' => '/admin/dashboard',
-      'icon' => 'ti ti-layout-dashboard'
-    ],
-    'Transaksi',
-    [
-      'name' => 'Peminjaman',
-      'link' => '/admin/loans',
-      'icon' => 'ti ti-arrows-exchange'
-    ],
-    [
-      'name' => 'Pengembalian',
-      'link' => '/admin/returns',
-      'icon' => 'ti ti-check'
-    ],
-    [
-      'name' => 'Denda',
-      'link' => '/admin/fines',
-      'icon' => 'ti ti-report-money'
-    ],
-    [
-      'name' => 'Statistik Peminjaman',
-      'link' => '/admin/loans/statistics',
-      'icon' => 'ti ti-bookmark',
-    ],
-    [
-      'name' => 'Filter Rak Buku',
-      'link' => '#',
-      'icon' => 'ti ti-filter'
-    ],
-    'Master',
-    [
-      'name' => 'Anggota',
-      'link' => '/admin/members',
-      'icon' => 'ti ti-user'
-    ],
-    [
-      'name' => 'Buku',
-      'link' => '/admin/books',
-      'icon' => 'ti ti-book'
-    ],
-    [
-      'name' => 'Kategori',
-      'link' => '/admin/categories',
-      'icon' => 'ti ti-category-2'
-    ],
-    [
-      'name' => 'Rak',
-      'link' => '/admin/racks',
-      'icon' => 'ti ti-columns'
-    ],
-    'Cetak Laporan',
-    [
-      'name' => 'Cetak Peminjaman',
-      'link' => '/admin/loans/report_loans',
-      'icon' => 'ti ti-arrows-exchange',
-      'target' => '_blank'
-    ],
-    [
-      'name' => 'Cetak Pengembalian',
-      'link' => '/admin/returns/report_returns',
-      'icon' => 'ti ti-check',
-      'target' => '_blank'
-    ],
-    [
-      'name' => 'Cetak Denda',
-      'link' => '/admin/fines/report_fines',
-      'icon' => 'ti ti-report-money',
-      'target' => '_blank'
-    ],
-  ];
+    'name' => 'Dashboard',
+    'link' => '/admin/dashboard',
+    'icon' => 'ti ti-layout-dashboard'
+  ],
+  'Master',
+  [
+    'name' => 'Anggota',
+    'link' => '/admin/members',
+    'icon' => 'ti ti-user'
+  ],
+  [
+    'name' => 'Buku',
+    'link' => '/admin/books',
+    'icon' => 'ti ti-book'
+  ],
+  [
+    'name' => 'Kategori',
+    'link' => '/admin/categories',
+    'icon' => 'ti ti-category-2'
+  ],
+  [
+    'name' => 'Rak',
+    'link' => '/admin/racks',
+    'icon' => 'ti ti-columns'
+  ],
+  'Transaksi',
+  [
+    'name' => 'Peminjaman',
+    'link' => '/admin/loans',
+    'icon' => 'ti ti-arrows-exchange'
+  ],
+  [
+    'name' => 'Pengembalian',
+    'link' => '/admin/returns',
+    'icon' => 'ti ti-check'
+  ],
+  [
+    'name' => 'Denda',
+    'link' => '/admin/fines',
+    'icon' => 'ti ti-report-money'
+  ],
+  [
+    'name' => 'Filter Kategori',
+    'link' => '/admin/loans/book_category',
+    'icon' => 'ti ti-filter'
+  ],
+  [
+    'name' => 'Statistik Peminjaman',
+    'link' => '/admin/loans/statistics',
+    'icon' => 'ti ti-bookmark',
+  ],
+  'Cetak Laporan',
+  [
+    'name' => 'Cetak Peminjaman',
+    'link' => '/admin/loans/report_loans',
+    'icon' => 'ti ti-arrows-exchange',
+    'target' => '_blank'
+  ],
+  [
+    'name' => 'Cetak Statistik Peminjaman',
+    'link' => '/admin/loans/print_statistics',
+    'icon' => 'ti ti-report-money',
+    'target' => '_blank'
+  ],
+  [
+    'name' => 'Cetak Pengembalian',
+    'link' => '/admin/returns/report_returns',
+    'icon' => 'ti ti-check',
+    'target' => '_blank'
+  ],
+  [
+    'name' => 'Cetak Denda',
+    'link' => '/admin/fines/report_fines',
+    'icon' => 'ti ti-report-money',
+    'target' => '_blank'
+  ],
+  [
+    'name' => 'Cetak Filter Kategori',
+    'link' => '#',
+    'icon' => 'ti ti-report-money',
+    'target' => '_blank'
+  ],
+];
 
 if (auth()->user()->inGroup('superadmin') ?? false) {
   $sidebarNavs = array_merge(
@@ -92,6 +103,7 @@ if (auth()->user()->inGroup('superadmin') ?? false) {
     ]
   );
 }
+
 ?>
 
 <!-- Sidebar Start -->
@@ -121,7 +133,7 @@ if (auth()->user()->inGroup('superadmin') ?? false) {
             </li>
           <?php else : ?>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="<?= base_url($nav['link']) ?>" aria-expanded="false" <?= isset($nav['target']) ? 'target="' . $nav['target'] . '"' : ''; ?>>
+              <a class="sidebar-link <?= (strpos(uri_string(), trim($nav['link'], '/')) === 0) ? 'active' : ''; ?>" href="<?= base_url($nav['link']) ?>" aria-expanded="false" <?= isset($nav['target']) ? 'target="' . $nav['target'] . '"' : ''; ?>>
                 <span>
                   <i class="<?= $nav['icon']; ?>"></i>
                 </span>
@@ -130,6 +142,7 @@ if (auth()->user()->inGroup('superadmin') ?? false) {
             </li>
           <?php endif; ?>
         <?php endforeach; ?>
+
       </ul>
     </nav>
     <!-- End Sidebar navigation -->

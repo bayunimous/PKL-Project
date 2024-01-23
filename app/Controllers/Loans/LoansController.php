@@ -410,8 +410,57 @@ class LoansController extends ResourceController
         return view('loans/statistics', $data);
     }
 
-    // Tampilkan view cetak laporan
-    // 
+    public function printStatistics($format = 'pdf')
+    {
+        $topBorrowers = $this->loanModel
+            ->select('members.*, COUNT(loans.id) as total_loans')
+            ->join('members', 'loans.member_id = members.id', 'LEFT')
+            ->groupBy('members.id')
+            ->orderBy('total_loans', 'DESC')
+            ->limit(5)
+            ->findAll();
+
+        foreach ($topBorrowers as &$borrower) {
+            // Format date if needed
+        }
+
+        $data = [
+            'topBorrowers' => $topBorrowers,
+        ];
+
+        if ($format === 'html') {
+            return view('loans/print_statistics', $data); // Change view file if needed
+        } elseif ($format === 'pdf') {
+            $html = view('loans/print_statistics', $data); // Change view file if needed
+
+            $options = new Options();
+            $options->set('isHtml5ParserEnabled', true);
+            $options->set('isPhpEnabled', true);
+            $dompdf = new Dompdf($options);
+            $dompdf->loadHtml($html);
+            $dompdf->setPaper('A4', 'portrait');
+            $dompdf->render();
+
+            $dompdf->stream("Laporan_Peminjaman", array("Attachment" => false));
+        }
+
+        return view('loans/print_statistics', [$data]);
+    }
+    public function bookCategoryStatistics()
+    {
+        $statistics = $this->loanModel
+            ->select('categories.name as category, COUNT(loans.id) as total_loans')
+            ->join('books', 'loans.book_id = books.id', 'LEFT')
+            ->join('categories', 'books.category_id = categories.id', 'LEFT')
+            ->groupBy('categories.name')
+            ->findAll();
+
+        $data = [
+            'statistics' => $statistics,
+        ];
+
+        return view('loans/book_category', $data);
+    }
 
 
     /**

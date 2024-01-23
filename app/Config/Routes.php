@@ -43,6 +43,11 @@ $routes->group('admin', ['filter' => 'session'], static function (RouteCollectio
     ##sidebar print routes
     $routes->get('loans/report_loans', 'Loans\LoansController::reportLoans');
     $routes->get('loans/statistics', 'Loans\LoansController::statistics');
+    $routes->get('loans/print_statistics', 'Loans\LoansController::printStatistics');
+
+
+    $routes->get('loans/book_category', 'Loans\LoansController::bookCategoryStatistics');
+
     $routes->get('returns/report_returns', 'Loans\ReturnsController::reportReturns');
     $routes->get('fines/report_fines', 'Loans\FinesController::reportFines');
 
