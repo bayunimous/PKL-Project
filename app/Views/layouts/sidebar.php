@@ -84,7 +84,7 @@ $sidebarNavs = [
   ],
   [
     'name' => 'Cetak Filter Kategori',
-    'link' => '#',
+    'link' => '/admin/loans/print_book_category',
     'icon' => 'ti ti-report-money',
     'target' => '_blank'
   ],

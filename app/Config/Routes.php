@@ -44,6 +44,7 @@ $routes->group('admin', ['filter' => 'session'], static function (RouteCollectio
     $routes->get('loans/report_loans', 'Loans\LoansController::reportLoans');
     $routes->get('loans/statistics', 'Loans\LoansController::statistics');
     $routes->get('loans/print_statistics', 'Loans\LoansController::printStatistics');
+    $routes->get('loans/print_book_category', 'Loans\LoansController::printBookCategoryStatistics');
 
 
     $routes->get('loans/book_category', 'Loans\LoansController::bookCategoryStatistics');

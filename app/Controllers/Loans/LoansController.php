@@ -462,6 +462,46 @@ class LoansController extends ResourceController
         return view('loans/book_category', $data);
     }
 
+    public function printBookCategoryStatistics()
+    {
+        // Get the statistics data
+        $statistics = $this->loanModel
+            ->select('categories.name as category, COUNT(loans.id) as total_loans')
+            ->join('books', 'loans.book_id = books.id', 'LEFT')
+            ->join('categories', 'books.category_id = categories.id', 'LEFT')
+            ->groupBy('categories.name')
+            ->findAll();
+
+        // Pass the data to the view
+        $data = [
+            'statistics' => $statistics,
+        ];
+
+        // Load the PDF view
+        $pdf = view('loans/print_book_category', $data);
+
+        // Set up the PDF options
+        $options = new \Dompdf\Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $options->set('isPhpEnabled', true);
+
+        // Create the Dompdf instance
+        $dompdf = new \Dompdf\Dompdf($options);
+
+        // Load the HTML content into Dompdf
+        $dompdf->loadHtml($pdf);
+
+        // Set paper size and orientation
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the PDF (output)
+        $dompdf->render();
+
+        // Stream the PDF to the browser
+        $dompdf->stream("Statistik_Peminjaman_Berdasarkan_Kategori_Buku.pdf");
+    }
+
+
 
     /**
      * Return the editable properties of a resource object
