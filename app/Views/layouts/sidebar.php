@@ -65,12 +65,6 @@ $sidebarNavs = [
     'target' => '_blank'
   ],
   [
-    'name' => 'Cetak Statistik Peminjaman',
-    'link' => '/admin/reports/print_statistics',
-    'icon' => 'ti ti-report-money',
-    'target' => '_blank'
-  ],
-  [
     'name' => 'Cetak Pengembalian',
     'link' => '/admin/reports/report_returns',
     'icon' => 'ti ti-check',
@@ -85,7 +79,13 @@ $sidebarNavs = [
   [
     'name' => 'Cetak Filter Kategori',
     'link' => '/admin/reports/print_book_category',
-    'icon' => 'ti ti-report-money',
+    'icon' => 'ti ti-filter',
+    'target' => '_blank'
+  ],
+  [
+    'name' => 'Cetak Statistik Peminjaman',
+    'link' => '/admin/reports/print_statistics',
+    'icon' => 'ti ti-bookmark',
     'target' => '_blank'
   ],
 ];
