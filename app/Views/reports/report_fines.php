@@ -12,31 +12,26 @@
             font-family: Arial, sans-serif;
         }
 
-        .card {
-            margin-top: 20px;
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #dddddd;
         }
 
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        .header img {
+            max-width: 100px;
+            /* Sesuaikan lebar maksimum logo */
+            margin-bottom: 10px;
         }
 
-        .table th,
-        .table td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
+        .header h1 {
+            margin-bottom: 0;
         }
 
-        .table th {
-            background-color: #f2f2f2;
-        }
-    </style>
-    <style>
-        /* Tambahkan gaya CSS sesuai kebutuhan */
-        body {
-            font-family: Arial, sans-serif;
+        .header p {
+            margin-top: 0;
+            font-size: 18px;
         }
 
         .card {
@@ -64,6 +59,14 @@
 
 <body>
 
+    <!-- Header -->
+    <div class="header">
+        <h1>Dinas Perpustakaan dan Kearsipan<br>Provinsi Kalimantan Selatan</h1>
+        <p>Jl. A. Yani Km. 6,400 No. 6, Pemurus Luar<br>Kec. Banjarmasin Timur., Kota Banjarmasin<br>Kalimantan Selatan 70249</p>
+
+    </div>
+
+    <!-- Content -->
     <div class="card">
         <div class="card-body">
             <h2 class="card-title fw-bold mb-4 text-center">Laporan Denda</h2>
@@ -91,6 +94,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

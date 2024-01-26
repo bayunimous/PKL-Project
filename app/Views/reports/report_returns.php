@@ -1,5 +1,3 @@
-<!-- returns/report_returns.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +9,28 @@
         /* Tambahkan gaya CSS sesuai kebutuhan */
         body {
             font-family: Arial, sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .header img {
+            max-width: 100px;
+            /* Sesuaikan lebar maksimum logo */
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            margin-bottom: 0;
+        }
+
+        .header p {
+            margin-top: 0;
+            font-size: 18px;
         }
 
         table {
@@ -33,6 +53,12 @@
 </head>
 
 <body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Dinas Perpustakaan dan Kearsipan<br>Provinsi Kalimantan Selatan</h1>
+        <p>Jl. A. Yani Km. 6,400 No. 6, Pemurus Luar<br>Kec. Banjarmasin Timur., Kota Banjarmasin<br>Kalimantan Selatan 70249</p>
+
+    </div>
 
     <h2 class="card-title fw-bold mb-4 text-center">Laporan Pengembalian</h2>
 
@@ -40,7 +66,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>No</th>
                     <th>Nama Peminjam</th>
                     <th>Judul Buku</th>
                     <th>Jumlah</th>

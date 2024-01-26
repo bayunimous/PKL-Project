@@ -42,7 +42,7 @@
     <table class="table table-hover table-striped">
       <thead class="table-light">
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">No</th>
           <th scope="col">Nama lengkap</th>
           <th scope="col">Email</th>
           <th scope="col">Phone</th>

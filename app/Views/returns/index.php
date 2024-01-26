@@ -46,7 +46,7 @@ if (session()->getFlashdata('msg')) : ?>
     <table class="table table-hover table-striped">
       <thead class="table-light">
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">No</th>
           <th scope="col">Nama peminjam</th>
           <th scope="col">Judul buku</th>
           <th scope="col" class="text-center">Jumlah</th>
