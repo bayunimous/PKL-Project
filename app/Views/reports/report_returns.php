@@ -72,7 +72,6 @@
                     <th>Jumlah</th>
                     <th>Tanggal Pinjam</th>
                     <th>Tanggal Pengembalian</th>
-                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -84,7 +83,7 @@
                         <td><?= $loan['quantity']; ?></td>
                         <td><?= $loan['loan_date']; ?></td>
                         <td><?= $loan['return_date']; ?></td>
-                        <td><?= $loan['fine_deleted'] ? 'Lunas' : 'Menunggak'; ?></td>
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>

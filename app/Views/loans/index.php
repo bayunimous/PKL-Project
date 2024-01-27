@@ -40,9 +40,6 @@ if (session()->getFlashdata('msg')) : ?>
               <i class="ti ti-plus"></i>
               Peminjaman baru
             </a>
-            <a class="btn btn-danger" href="<?= base_url('admin/reports/reportloans'); ?>">
-              <i class="fas fa-print"></i>Print
-            </a>
           </div>
         </div>
       </div>
