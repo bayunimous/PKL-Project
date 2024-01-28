@@ -48,12 +48,12 @@ $sidebarNavs = [
     'icon' => 'ti ti-report-money'
   ],
   [
-    'name' => 'Filter Kategori',
+    'name' => 'Kategori Buku Terlaris (KBT)',
     'link' => '/admin/filtersrack/book_category',
     'icon' => 'ti ti-filter'
   ],
   [
-    'name' => 'Statistik Peminjaman',
+    'name' => 'Anggota Teraktif',
     'link' => '/admin/statisticsloan/statistics',
     'icon' => 'ti ti-bookmark',
   ],
@@ -77,13 +77,13 @@ $sidebarNavs = [
     'target' => '_blank'
   ],
   [
-    'name' => 'Cetak Filter Kategori',
+    'name' => 'Cetak Kategori (KBT)',
     'link' => '/admin/reports/print_book_category',
     'icon' => 'ti ti-filter',
     'target' => '_blank'
   ],
   [
-    'name' => 'Cetak Statistik Peminjaman',
+    'name' => 'Cetak Anggota Teraktif',
     'link' => '/admin/reports/print_statistics',
     'icon' => 'ti ti-bookmark',
     'target' => '_blank'

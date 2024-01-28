@@ -69,7 +69,7 @@
     <!-- Content -->
     <div class="card">
         <div class="card-body">
-            <h2 class="card-title fw-bold mb-4 text-center">Laporan Denda</h2>
+            <h2 class="card-title fw-bold mb-4 text-center">Laporan Denda Anggota</h2>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <thead class="table-light">

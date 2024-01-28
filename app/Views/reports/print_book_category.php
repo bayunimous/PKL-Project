@@ -62,7 +62,7 @@
     </div>
 
     <!-- Main content -->
-    <h2 class="text-center mb-4">Statistik Peminjaman Berdasarkan Kategori Buku</h2>
+    <h2 class="text-center mb-4">Laporan Data Kategori Buku Terlaris</h2>
 
     <table class="table table-hover table-striped">
         <thead class="table-light">

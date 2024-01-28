@@ -62,7 +62,7 @@
     <div class="container mt-5">
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title fw-bold mb-4 text-center">Statistik Peminjaman</h2>
+                <h2 class="card-title fw-bold mb-4 text-center">Laporan Data Anggota E-PERPUSJAR Teraktif</h2>
 
                 <?php if (!empty($topBorrowers)) : ?>
                     <div class="table-responsive">

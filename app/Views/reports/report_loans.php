@@ -66,7 +66,7 @@
         <div class="card">
             <div class="card-body">
                 <!-- Report title -->
-                <h2 class="card-title fw-bold mb-4 text-center">Laporan Peminjaman</h2>
+                <h2 class="card-title fw-bold mb-4 text-center">Laporan Data Peminjaman Buku</h2>
 
                 <!-- Table for displaying data -->
                 <div class="table-responsive">

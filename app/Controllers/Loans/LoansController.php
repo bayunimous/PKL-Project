@@ -386,7 +386,7 @@ class LoansController extends ResourceController
             $dompdf->setPaper('A4', 'portrait');
             $dompdf->render();
 
-            $dompdf->stream("Laporan_Peminjaman", array("Attachment" => false));
+            $dompdf->stream("Laporan Data Peminjaman Buku E-PERPUSJAR", array("Attachment" => false));
         }
 
         return view('reports/report_loans', ['loans' => $loans]);
@@ -442,7 +442,7 @@ class LoansController extends ResourceController
             $dompdf->setPaper('A4', 'portrait');
             $dompdf->render();
 
-            $dompdf->stream("Laporan_Peminjaman", array("Attachment" => false));
+            $dompdf->stream("Laporan Anggota Teraktif E-PERPUSJAR", array("Attachment" => false));
         }
 
         return view('reports/print_statistics', $data);
@@ -500,7 +500,7 @@ class LoansController extends ResourceController
         $dompdf->render();
 
         // Stream the PDF to the browser
-        $dompdf->stream("Statistik_Peminjaman_Berdasarkan_Kategori_Buku.pdf");
+        $dompdf->stream("Laporan Data Kategori Buku Terlaris E-PERPUSJAR.pdf");
     }
 
 

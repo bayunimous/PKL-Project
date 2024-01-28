@@ -260,7 +260,7 @@ class FinesController extends ResourceController
         $dompdf->render();
 
         // Output the generated PDF to Browser
-        $dompdf->stream('laporan_denda.pdf', ['Attachment' => 0]);
+        $dompdf->stream('Laporan Denda Anggota E-PERPUSJAR.pdf', ['Attachment' => 0]);
     }
 
     // ... (Kode yang sudah ada sebelumnya)

@@ -60,7 +60,7 @@
 
     </div>
 
-    <h2 class="card-title fw-bold mb-4 text-center">Laporan Pengembalian</h2>
+    <h2 class="card-title fw-bold mb-4 text-center">Laporan Data Pengembalian Buku</h2>
 
     <?php if (!empty($loans)) : ?>
         <table>

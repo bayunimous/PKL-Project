@@ -7,7 +7,7 @@
 <?= $this->section('content') ?>
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title fw-semibold mb-4">Statistik Peminjaman</h5>
+        <h5 class="card-title fw-semibold mb-4">Data Anggota Teraktif</h5>
 
         <?php if (!empty($topBorrowers)) : ?>
             <div class="table-responsive">

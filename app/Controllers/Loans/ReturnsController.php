@@ -360,6 +360,6 @@ class ReturnsController extends ResourceController
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
 
-        $dompdf->stream("Laporan_Pengembalian", array("Attachment" => false));
+        $dompdf->stream("Laporan Pengembalian Buku E-PERPUSJAR", array("Attachment" => false));
     }
 }
