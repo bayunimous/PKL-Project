@@ -13,17 +13,8 @@ class MemberModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [
-        'uid',
-        'first_name',
-        'last_name',
-        'email',
-        'phone',
-        'address',
-        'date_of_birth',
-        'gender',
-        'qr_code'
-    ];
+    protected $allowedFields = ['uid', 'first_name', 'last_name', 'email', 'phone', 'address', 'date_of_birth', 'gender', 'qr_code', 'password'];
+
 
     // Dates
     protected $useTimestamps = true;

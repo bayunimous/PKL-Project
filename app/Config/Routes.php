@@ -34,6 +34,12 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/book', 'Home::book');
 
+//login
+$routes->get('member/login', 'Members\LoginController::loginForm');
+$routes->post('member/login', 'Members\LoginController::login');
+$routes->get('member/dashboard', 'Members\DashboardController::index');
+
+
 service('auth')->routes($routes);
 
 $routes->group('admin', ['filter' => 'session'], static function (RouteCollection $routes) {

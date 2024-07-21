@@ -66,6 +66,7 @@ class MembersController extends ResourceController
         return view('members/index', $data);
     }
 
+
     /**
      * Return the properties of a resource object
      *

@@ -12,6 +12,7 @@
     <p class="lead mb-4">E-PERPUSJAR adalah teman setia pencinta buku dan pembelajar di mana saja, kapan saja dikelola oleh <br>Dinas Perpustakaan dan Kearsipan <br>Provinsi Kalimantan Selatan.</p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
       <a href="<?= base_url('login'); ?>" class="btn btn-primary btn-lg px-4 me-sm-3">Login petugas</a>
+      <a href="<?= base_url('member/login'); ?>" class="btn btn-dark btn-lg px-4 me-sm-3">Login anggota</a>
       <a href="<?= base_url('book'); ?>" class="btn btn-outline-secondary btn-lg px-4">Daftar buku</a>
     </div>
   </div>
